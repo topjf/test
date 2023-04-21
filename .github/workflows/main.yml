@@ -6,9 +6,9 @@ on:
       - "**"
     tags:
       - v**
-  pull_request:
-    branches:
-      - main
+ # pull_request:
+  #  branches:
+   #   - main
       
 jobs:
   release:
@@ -17,15 +17,6 @@ jobs:
     uses: ./.github/workflows/release.yml
     secrets:
       RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-   
- # merge:
-  #  name: merge
-   # if: github.event_name == 'pull_request'             
-   # needs:
-   #   - release
-   # uses: ./.github/workflows/merge.yml
-   # secrets:
-   #   RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
 
   build-docs:
     name: build docs
