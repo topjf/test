@@ -1,0 +1,16 @@
+name: Build Docs
+
+on:
+  workflow_call:
+    secrets:
+      RELEASE_TOKEN:
+        required: true
+        
+jobs:
+  deploy-gh-pages:
+    name: 发布文档
+    runs-on: ubuntu-latest
+    if: (startsWith(github.event.head_commit.message, 'release') == false) 
+    steps:
+      - name: Checkout
+        run: echo "发布文档OK👌"

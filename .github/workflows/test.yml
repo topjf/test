@@ -1,0 +1,15 @@
+name: Test
+
+on:
+  workflow_call:
+    secrets:
+      RELEASE_TOKEN:
+        required: true
+        
+jobs:
+  test-demos:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: out
+        run: echo "测试成功"
