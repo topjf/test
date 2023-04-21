@@ -13,7 +13,7 @@ on:
 jobs:
   release:
     name: Create Release Changelog
-    if: startsWith(github.event.head_commit.message, 'feat') || startsWith(github.event.head_commit.message, 'fix') || startsWith(github.event.head_commit.message, 'docs') || startsWith(github.event.head_commit.message, 'style') || startsWith(github.event.head_commit.message, 'refactor') || startsWith(github.event.head_commit.message, 'perf') || startsWith(github.event.head_commit.message, 'test') || startsWith(github.event.head_commit.message, 'build') || startsWith(github.event.head_commit.message, 'ci') || startsWith(github.event.head_commit.message, 'chore') || startsWith(github.event.head_commit.message, 'revert') 
+    if: github.ref_name == 'main' && startsWith(github.event.head_commit.message, 'feat') || startsWith(github.event.head_commit.message, 'fix') || startsWith(github.event.head_commit.message, 'docs') || startsWith(github.event.head_commit.message, 'style') || startsWith(github.event.head_commit.message, 'refactor') || startsWith(github.event.head_commit.message, 'perf') || startsWith(github.event.head_commit.message, 'test') || startsWith(github.event.head_commit.message, 'build') || startsWith(github.event.head_commit.message, 'ci') || startsWith(github.event.head_commit.message, 'chore') || startsWith(github.event.head_commit.message, 'revert') 
     uses: ./.github/workflows/release.yml
     secrets:
       RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
@@ -36,7 +36,7 @@ jobs:
       
   update-docs:
     name: update docs
-    if: github.event_name == 'push' && startsWith(github.event.head_commit.message, 'Update')
+    if: github.ref_name == 'main' && github.event_name == 'push' && startsWith(github.event.head_commit.message, 'Update')
     uses: ./.github/workflows/docs.yml
     secrets:
       RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
@@ -44,7 +44,7 @@ jobs:
 
   test:
     name: Test
-    if: github.event_name == 'push' && startsWith(github.event.head_commit.message, 'mytest')
+    if: github.ref_name == 'main' && github.event_name == 'push' && startsWith(github.event.head_commit.message, 'mytest')
     uses: ./.github/workflows/test.yml
     secrets:
       RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
