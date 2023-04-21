@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [1.0.7](https://github.com/topjf/test/compare/v1.0.6...v1.0.7) (2023-04-21)
+
+
+### 🐛Bug Fixes
+
+* 更新 ([3067b8a](https://github.com/topjf/test/commit/3067b8a50c9ed5b0b436a20420e0218a79553d13))
+
 ## [1.0.6](https://github.com/topjf/test/compare/v1.0.5...v1.0.6) (2023-04-21)
 
 
