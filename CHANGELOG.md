@@ -1,6 +1,13 @@
 # Changelog
 <!-- #region recent-beta -->
 
+## [1.0.4](https://github.com/topjf/test/compare/v1.0.3...v1.0.4) (2023-04-21)
+
+
+### 🐛Bug Fixes
+
+* 更新工作流 ([9dd96b2](https://github.com/topjf/test/commit/9dd96b24106897b1fac0cb15ed415d7b67871d31))
+
 ## [1.0.3](https://github.com/topjf/test/compare/v1.0.2...v1.0.3) (2023-04-21)
 
 
